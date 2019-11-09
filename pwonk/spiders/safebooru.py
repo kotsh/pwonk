@@ -27,5 +27,10 @@ class SafebooruSpider(scrapy.Spider):
             yield response.follow(page[0], self.parse)
 
     def parse_post(self, response):
-        image = response.xpath('//*[@id="image"]/@src').getall()
-        yield ImageItem(image_urls=image)
+        original = response.xpath('/html/body/div[5]/div/div[2]/div[4]/ul/li[3]/a/@href').getall()
+        if len(original) > 0:
+            self.logger.info('Found original image, fetching that instead.')
+            yield ImageItem(image_urls=original)
+        else:
+            image = response.xpath('//*[@id="image"]/@src').getall()
+            yield ImageItem(image_urls=image)
