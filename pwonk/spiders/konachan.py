@@ -23,7 +23,7 @@ class KonachanSpider(scrapy.Spider):
         # paginate
         page = [r for r in response.xpath('/html/body/div[7]/div[1]/div[3]/div[5]/div') if r.xpath('@rel').get() == 'next']
 
-        if page is not None and len(page) > 0:
+        if len(page) > 0:
             yield response.follow(page[0], self.parse)
 
     def parse_post(self, response):

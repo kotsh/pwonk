@@ -23,7 +23,7 @@ class SafebooruSpider(scrapy.Spider):
         # paginate
         page = [r for r in response.xpath('//*[@id="paginator"]/div/a') if r.xpath('@alt').get() == 'next']
 
-        if page is not None:
+        if len(page) > 0:
             yield response.follow(page[0], self.parse)
 
     def parse_post(self, response):
