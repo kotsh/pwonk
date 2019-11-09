@@ -29,7 +29,7 @@ class KonachanSpider(scrapy.Spider):
     def parse_post(self, response):
         larger = response.xpath('//*[@id="highres"]/@href').getall()
         if len(larger) > 0:
-            self.logger.info('Found original image, fetching that instead.')
+            self.logger.info('Found highres, fetching that instead.')
             yield ImageItem(image_urls=larger)
         else:
             image = response.xpath('//*[@id="image"]/@src').getall()
