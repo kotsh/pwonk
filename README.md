@@ -6,5 +6,5 @@ Scrape various websites for interesting information, probably
 - [x] Konachan (konachan.com)
 - [x] Danbooru (danbooru.donmai.us)
 - [x] Yande.re (yande.re)
-- [ ] Wallpaper Abyss (wall.alphacoders.com)
+- [x] Wallpaper Abyss (wall.alphacoders.com)
 - [ ] Reddit (reddit.com)
