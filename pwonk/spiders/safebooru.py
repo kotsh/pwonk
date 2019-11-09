@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
-from pwonk.items import SafebooruItem
+from pwonk.items import ImageItem
 
 
 class SafebooruSpider(scrapy.Spider):
@@ -28,4 +28,4 @@ class SafebooruSpider(scrapy.Spider):
 
     def parse_post(self, response):
         image = response.xpath('//*[@id="image"]/@src').getall()
-        yield SafebooruItem(image_urls=image)
+        yield ImageItem(image_urls=image)

@@ -8,6 +8,5 @@
 import scrapy
 
 
-class SafebooruItem(scrapy.Item):
+class ImageItem(scrapy.Item):
     image_urls = scrapy.Field()
-    pass
