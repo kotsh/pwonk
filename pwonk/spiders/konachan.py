@@ -6,10 +6,10 @@ from pwonk.items import ImageItem
 
 class KonachanSpider(scrapy.Spider):
     name = 'konachan'
-    allowed_domains = ['konachan.com']
+    allowed_domains = ['konachan.com', 'konachan.net']
 
-    def start_requests(self):
-        url = 'https://konachan.com/post'
+    def start_requests(self, safe):
+        url = f'https://konachan.{"net" if safe else "com"}/post'
         tags = getattr(self, 'tags', None)
         if tags is not None:
             url = url + '?tags=' + '+'.join(tags.split(',')).strip('+')

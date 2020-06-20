@@ -1,9 +1,11 @@
 # Pwonk
+
 Scrape various websites for interesting information, probably
 
 ## Supported Websites
+
 - [x] Safebooru (safebooru.org)
-- [x] Konachan (konachan.com)
+- [x] Konachan (konachan.com, konachan.net)
 - [x] Danbooru (danbooru.donmai.us)
 - [x] Yande.re (yande.re)
 - [x] Wallpaper Abyss (wall.alphacoders.com)
